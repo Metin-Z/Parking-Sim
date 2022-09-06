@@ -42,7 +42,7 @@ public class CarSpawnList : MonoBehaviour
         }
         if (WaitFalsePos[0].GetComponent<WaitChecker>().IUsed == true)
         {
-            WaitPos.Add(WaitFalsePos.LastOrDefault());
+            WaitPos.Add(WaitFalsePos.FirstOrDefault());
             WaitFalsePos.Remove(WaitFalsePos.FirstOrDefault());
         }
         yield return new WaitForSeconds(5);

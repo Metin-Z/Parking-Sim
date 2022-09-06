@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 114758110}
   m_Layer: 0
   m_Name: CarWaitArea2
-  m_TagString: Untagged
+  m_TagString: Wait
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 343693143}
   m_Layer: 0
   m_Name: CarWaitArea1
-  m_TagString: Untagged
+  m_TagString: Wait
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 414442633}
   m_Layer: 0
   m_Name: ParkArea6
-  m_TagString: Untagged
+  m_TagString: Park
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1145,13 +1145,14 @@ MonoBehaviour:
   CarsSpawnPos:
   - {fileID: 366317702}
   - {fileID: 1878234866}
-  CarWaitPos:
+  WaitPos:
   - {fileID: 343693141}
   - {fileID: 114758105}
   - {fileID: 743624697}
   - {fileID: 1336430651}
   - {fileID: 1678043185}
   - {fileID: 1644762319}
+  WaitFalsePos: []
 --- !u!1 &520321852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1497,7 @@ GameObject:
   - component: {fileID: 635934868}
   m_Layer: 0
   m_Name: ParkArea4
-  m_TagString: Untagged
+  m_TagString: Park
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1890,7 +1891,7 @@ GameObject:
   - component: {fileID: 734336489}
   m_Layer: 0
   m_Name: ParkArea3
-  m_TagString: Untagged
+  m_TagString: Park
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2029,7 +2030,7 @@ GameObject:
   - component: {fileID: 743624702}
   m_Layer: 0
   m_Name: CarWaitArea3
-  m_TagString: Untagged
+  m_TagString: Wait
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2192,7 +2193,7 @@ GameObject:
   - component: {fileID: 743791558}
   m_Layer: 0
   m_Name: ParkArea2
-  m_TagString: Untagged
+  m_TagString: Park
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2427,7 +2428,7 @@ GameObject:
   - component: {fileID: 762259083}
   m_Layer: 0
   m_Name: ParkArea5
-  m_TagString: Untagged
+  m_TagString: Park
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3576,7 +3577,7 @@ GameObject:
   - component: {fileID: 1336430656}
   m_Layer: 0
   m_Name: CarWaitArea4
-  m_TagString: Untagged
+  m_TagString: Wait
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4272,7 +4273,7 @@ GameObject:
   - component: {fileID: 1644762324}
   m_Layer: 0
   m_Name: CarWaitArea6
-  m_TagString: Untagged
+  m_TagString: Wait
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4437,7 +4438,7 @@ GameObject:
   - component: {fileID: 1678043190}
   m_Layer: 0
   m_Name: CarWaitArea5
-  m_TagString: Untagged
+  m_TagString: Wait
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5464,7 +5465,7 @@ GameObject:
   - component: {fileID: 2027580331}
   m_Layer: 0
   m_Name: ParkArea1
-  m_TagString: Untagged
+  m_TagString: Park
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

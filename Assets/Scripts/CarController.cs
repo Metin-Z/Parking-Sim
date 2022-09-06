@@ -9,6 +9,10 @@ public class CarController : MonoBehaviour
     void Start()
     {
         _carSpawn = FindObjectOfType<CarSpawnList>();
+        
+    }
+    private void Update()
+    {
         if (_carSpawn.WaitFalsePos[0].GetComponent<WaitChecker>().IUsed == false)
         {
             transform.DOMove(new Vector3(
