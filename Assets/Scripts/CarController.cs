@@ -10,13 +10,13 @@ public class CarController : MonoBehaviour
     void Start()
     {
         _carSpawn = FindObjectOfType<CarSpawnList>();
-        if (_carSpawn.CarWaitPos[WaitChecker.waitCount].GetComponent<WaitChecker>().IUsed == false)
+        if (_carSpawn.WaitFalsePos[WaitChecker.waitCount].GetComponent<WaitChecker>().IUsed == false)
         {
             transform.DOMove(new Vector3(
-           _carSpawn.CarWaitPos[WaitChecker.waitCount].position.x,
-           _carSpawn.CarWaitPos[WaitChecker.waitCount].position.y,
-           _carSpawn.CarWaitPos[WaitChecker.waitCount].position.z),
-           4.25f);       
+           _carSpawn.WaitFalsePos[WaitChecker.waitCount].position.x,
+           _carSpawn.WaitFalsePos[WaitChecker.waitCount].position.y,
+           _carSpawn.WaitFalsePos[WaitChecker.waitCount].position.z),
+           3.25f);       
         }          
     }
     private void Update()
