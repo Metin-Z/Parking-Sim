@@ -14,6 +14,7 @@ public class CarSpawnList : MonoBehaviour
     public void Start()
     {
         StartCoroutine(CarSpawn());
+        StartCoroutine(WaitAreaController());
     }
     public void Update()
     {     
@@ -28,17 +29,23 @@ public class CarSpawnList : MonoBehaviour
             obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
             obj.transform.DOScale(scale, 0.75f).SetEase(Ease.InBounce);
-            if (WaitPos[0].GetComponent<WaitChecker>().IUsed == false)
-            {
-                WaitFalsePos.Add(WaitPos.FirstOrDefault());
-                WaitPos.Remove(WaitPos.FirstOrDefault());
-            }
-            if (WaitFalsePos[0].GetComponent<WaitChecker>().IUsed == true)
-            {
-                WaitPos.Add(WaitFalsePos.FirstOrDefault());
-                WaitFalsePos.Remove(WaitFalsePos.FirstOrDefault());
-            }
+            
             yield return new WaitForSeconds(6);
         }
+    }
+    public IEnumerator WaitAreaController()
+    {
+        if (WaitPos[0].GetComponent<WaitChecker>().IUsed == false)
+        {
+            WaitFalsePos.Add(WaitPos.FirstOrDefault());
+            WaitPos.Remove(WaitPos.FirstOrDefault());
+        }
+        if (WaitFalsePos[0].GetComponent<WaitChecker>().IUsed == true)
+        {
+            WaitPos.Add(WaitFalsePos.LastOrDefault());
+            WaitFalsePos.Remove(WaitFalsePos.FirstOrDefault());
+        }
+        yield return new WaitForSeconds(5);
+        StartCoroutine(WaitAreaController());
     }
 }

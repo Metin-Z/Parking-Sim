@@ -5,22 +5,17 @@ using DG.Tweening;
 
 public class CarController : MonoBehaviour
 {
-    CarSpawnList _carSpawn;
-    
+    CarSpawnList _carSpawn;  
     void Start()
     {
         _carSpawn = FindObjectOfType<CarSpawnList>();
-        if (_carSpawn.WaitFalsePos[WaitChecker.waitCount].GetComponent<WaitChecker>().IUsed == false)
+        if (_carSpawn.WaitFalsePos[0].GetComponent<WaitChecker>().IUsed == false)
         {
             transform.DOMove(new Vector3(
-           _carSpawn.WaitFalsePos[WaitChecker.waitCount].position.x,
-           _carSpawn.WaitFalsePos[WaitChecker.waitCount].position.y,
-           _carSpawn.WaitFalsePos[WaitChecker.waitCount].position.z),
-           3.25f);       
-        }          
-    }
-    private void Update()
-    {
-             
+           _carSpawn.WaitFalsePos[0].position.x,
+           _carSpawn.WaitFalsePos[0].position.y,
+           _carSpawn.WaitFalsePos[0].position.z),
+           3.25f);
+        }
     }
 }
