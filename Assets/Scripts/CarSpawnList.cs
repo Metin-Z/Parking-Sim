@@ -16,10 +16,6 @@ public class CarSpawnList : MonoBehaviour
         StartCoroutine(CarSpawn());
         StartCoroutine(WaitAreaController());
     }
-    public void Update()
-    {     
-             
-    }
     public IEnumerator CarSpawn()
     {
         while (carCount > 0)
@@ -28,8 +24,7 @@ public class CarSpawnList : MonoBehaviour
             GameObject obj = Instantiate(CarsList[Random.Range(0, 4)], CarsSpawnPos[Random.Range(0, 2)]);
             obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
-            obj.transform.DOScale(scale, 0.75f).SetEase(Ease.InBounce);
-            
+            obj.transform.DOScale(scale, 0.45f).SetEase(Ease.InBounce);          
             yield return new WaitForSeconds(6);
         }
     }
@@ -45,7 +40,7 @@ public class CarSpawnList : MonoBehaviour
             WaitPos.Add(WaitFalsePos.FirstOrDefault());
             WaitFalsePos.Remove(WaitFalsePos.FirstOrDefault());
         }
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(5.9f);
         StartCoroutine(WaitAreaController());
     }
 }

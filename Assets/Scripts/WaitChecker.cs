@@ -17,7 +17,7 @@ public class WaitChecker : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag.Equals("Car"))
-        {
+        {        
             IUsed = false;
             waitCount-=1;
         }  
