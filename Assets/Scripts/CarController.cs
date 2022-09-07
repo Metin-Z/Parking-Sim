@@ -14,7 +14,7 @@ public class CarController : MonoBehaviour
     }
     private void Update()
     {
-
+        transform.DOLocalMove(new Vector3(0, 0, 0), 2.35f);
     }
    
 }

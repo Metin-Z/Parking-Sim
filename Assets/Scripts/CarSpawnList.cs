@@ -9,6 +9,7 @@ public class CarSpawnList : MonoBehaviour
     public List<GameObject> CarsList;
     public List<GameObject> WaitedCars;
     public List<Transform> CarsSpawnPos;
+    public List<Transform> ParkPos;
     public List<Transform> WaitPos;
     public List<Transform> WaitFalsePos;
     int carCount = 6;
@@ -45,13 +46,11 @@ public class CarSpawnList : MonoBehaviour
             obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
             obj.transform.DOScale(scale, 0.45f).SetEase(Ease.InBounce);
+            obj.transform.parent = WaitPos[0];
             WaitedCars.Add(obj);
-            obj.transform.DOMove(new Vector3(
-                  WaitPos[0].position.x,
-                  WaitPos[0].position.y,
-                  WaitPos[0].position.z),
-                  2.75f);
-            yield return new WaitForSeconds(2.8f);
+            //obj.transform.DOMove(new Vector3(0,0,0),2.75f);
+            //obj.transform.localPosition = new Vector3(0, 0, 0);
+            yield return new WaitForSeconds(2.4f);
         }
     }
 }

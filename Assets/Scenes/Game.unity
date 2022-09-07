@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IUsed: 0
+  childControl: 0
 --- !u!65 &114758110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -787,6 +788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IUsed: 0
+  childControl: 0
 --- !u!65 &343693143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1148,6 +1150,13 @@ MonoBehaviour:
   CarsSpawnPos:
   - {fileID: 366317702}
   - {fileID: 1878234866}
+  ParkPos:
+  - {fileID: 2027580330}
+  - {fileID: 743791557}
+  - {fileID: 734336488}
+  - {fileID: 635934867}
+  - {fileID: 762259082}
+  - {fileID: 414442632}
   WaitPos:
   - {fileID: 343693141}
   - {fileID: 114758105}
@@ -2169,6 +2178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IUsed: 0
+  childControl: 0
 --- !u!65 &743624702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3716,6 +3726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IUsed: 0
+  childControl: 0
 --- !u!65 &1336430656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4479,6 +4490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IUsed: 0
+  childControl: 0
 --- !u!65 &1644762324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4644,6 +4656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IUsed: 0
+  childControl: 0
 --- !u!65 &1678043190
 BoxCollider:
   m_ObjectHideFlags: 0

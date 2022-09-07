@@ -16,10 +16,13 @@ public class ParkControl : MonoBehaviour
         {
             _carSpawn.WaitedCars.Remove(_carSpawn.WaitedCars.FirstOrDefault());
             StartCoroutine(TrafficController());
+            other.transform.parent = null;
+            other.transform.parent = _carSpawn.ParkPos[0];
+            _carSpawn.ParkPos.Remove(_carSpawn.ParkPos.FirstOrDefault());
         }
     }
     public IEnumerator TrafficController(){
         yield return new WaitForSeconds(1.5f);
-        _carSpawn.WaitedCars[0].transform.position = new Vector3(_carSpawn.WaitPos[0].position.x, _carSpawn.WaitPos[0].position.y, _carSpawn.WaitPos[0].position.z);
+        _carSpawn.WaitedCars[0].transform.parent = _carSpawn.WaitPos[0];
     }
 }
