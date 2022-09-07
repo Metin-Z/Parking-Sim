@@ -12,13 +12,15 @@ public class CarSpawnList : MonoBehaviour
     public List<Transform> WaitPos;
     public List<Transform> WaitFalsePos;
     int carCount = 6;
+    bool control =false;
     public void Start()
     {
         StartCoroutine(CarSpawn());
+        StartCoroutine(StartControl());
     }
     private void Update()
     {
-        if (WaitPos.Count != 0)
+        if (WaitPos.Count != 0 && control==true)
         {
             if (WaitPos[0].GetComponent<WaitChecker>().IUsed == true)
             {
@@ -26,7 +28,7 @@ public class CarSpawnList : MonoBehaviour
                 WaitPos.Remove(WaitPos.FirstOrDefault());
             }
         }
-        if (WaitPos.Count >= 0)
+        if (WaitPos.Count >= 0 && control==true)
         {
             if (WaitFalsePos[0].GetComponent<WaitChecker>().IUsed == false)
             {
@@ -34,6 +36,11 @@ public class CarSpawnList : MonoBehaviour
                 WaitFalsePos.Remove(WaitFalsePos.FirstOrDefault());
             }
         }
+    }
+    public IEnumerator StartControl()
+    {
+        yield return new WaitForSeconds(2.35f);
+        control = true;
     }
     public IEnumerator CarSpawn()
     {

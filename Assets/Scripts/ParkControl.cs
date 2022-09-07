@@ -13,6 +13,7 @@ public class ParkControl : MonoBehaviour
     {
         if (other.gameObject.tag == "Car")
         {
+            Destroy(other.gameObject.GetComponent<Rigidbody>());
             _carSpawn.WaitedCars.Remove(_carSpawn.WaitedCars.FirstOrDefault());
             StartCoroutine(TrafficController());
             other.transform.parent = null;
