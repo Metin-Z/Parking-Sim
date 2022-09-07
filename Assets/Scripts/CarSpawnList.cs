@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System.Linq;
-
 public class CarSpawnList : MonoBehaviour
 {
     public List<GameObject> CarsList;
@@ -35,7 +34,6 @@ public class CarSpawnList : MonoBehaviour
                 WaitFalsePos.Remove(WaitFalsePos.FirstOrDefault());
             }
         }
-
     }
     public IEnumerator CarSpawn()
     {
