@@ -7,6 +7,7 @@ using System.Linq;
 public class CarSpawnList : MonoBehaviour
 {
     public List<GameObject> CarsList;
+    public List<GameObject> WaitedCars;
     public List<Transform> CarsSpawnPos;
     public List<Transform> WaitPos;
     public List<Transform> WaitFalsePos;
@@ -14,7 +15,26 @@ public class CarSpawnList : MonoBehaviour
     public void Start()
     {
         StartCoroutine(CarSpawn());
-        StartCoroutine(WaitAreaController());
+    }
+    private void Update()
+    {
+        if (WaitPos.Count != 0)
+        {
+            if (WaitPos[0].GetComponent<WaitChecker>().IUsed == true)
+            {
+                WaitFalsePos.Add(WaitPos.FirstOrDefault());
+                WaitPos.Remove(WaitPos.FirstOrDefault());
+            }
+        }
+        if (WaitPos.Count >= 0)
+        {
+            if (WaitFalsePos[0].GetComponent<WaitChecker>().IUsed == false)
+            {
+                WaitPos.Add(WaitFalsePos.FirstOrDefault());
+                WaitFalsePos.Remove(WaitFalsePos.FirstOrDefault());
+            }
+        }
+
     }
     public IEnumerator CarSpawn()
     {
@@ -24,23 +44,14 @@ public class CarSpawnList : MonoBehaviour
             GameObject obj = Instantiate(CarsList[Random.Range(0, 4)], CarsSpawnPos[Random.Range(0, 2)]);
             obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
-            obj.transform.DOScale(scale, 0.45f).SetEase(Ease.InBounce);          
-            yield return new WaitForSeconds(6);
+            obj.transform.DOScale(scale, 0.45f).SetEase(Ease.InBounce);
+            WaitedCars.Add(obj);
+            obj.transform.DOMove(new Vector3(
+                  WaitPos[0].position.x,
+                  WaitPos[0].position.y,
+                  WaitPos[0].position.z),
+                  2.75f);
+            yield return new WaitForSeconds(2.8f);
         }
-    }
-    public IEnumerator WaitAreaController()
-    {
-        if (WaitPos[0].GetComponent<WaitChecker>().IUsed == false)
-        {
-            WaitFalsePos.Add(WaitPos.FirstOrDefault());
-            WaitPos.Remove(WaitPos.FirstOrDefault());
-        }
-        if (WaitFalsePos[0].GetComponent<WaitChecker>().IUsed == true)
-        {
-            WaitPos.Add(WaitFalsePos.FirstOrDefault());
-            WaitFalsePos.Remove(WaitFalsePos.FirstOrDefault());
-        }
-        yield return new WaitForSeconds(5.9f);
-        StartCoroutine(WaitAreaController());
     }
 }
