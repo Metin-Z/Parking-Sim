@@ -8,10 +8,11 @@ public class CarController : MonoBehaviour
     public bool CarMove = true;
     void Start()
     {
-        _carSpawn = FindObjectOfType<CarSpawnList>();     
+        _carSpawn = FindObjectOfType<CarSpawnList>();
+        Move();
     }
-    private void Update()
+    public void Move()
     {
-        transform.DOLocalMove(new Vector3(0, 0, 0), 2.35f);
-    } 
+     transform.DOLocalMove(new Vector3(0, 0, 0), 2.35f);
+    }
 }

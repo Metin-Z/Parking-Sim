@@ -17,22 +17,23 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray Point = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(Point, out collision))
+            int layer = 7;
+            if (Physics.Raycast(Point, out collision, 1<< layer))
             {
-                Collider[] collisions = Physics.OverlapSphere(collision.point, 0.3f);
-
-                foreach(var cars in collisions)
+                Collider[] collisions = Physics.Raycast(collision.point,Vector3.forward,5f,layer);                  
+                foreach (var cars in collisions)
                 {
                     Rigidbody rb = cars.GetComponent<Rigidbody>();
                     if (rb!=null)
                     {
-                        Barrier.transform.DORotate(new Vector3(-60, 0, 0),1.5f, RotateMode.Fast).OnComplete(
-                            ()=>{
-                                Barrier.transform.DORotate(new Vector3(0, 0, 0), 1.5f, RotateMode.WorldAxisAdd);
-                                });
+                        Barrier.transform.DORotate(new Vector3(0, 0, -60), 1.5f, RotateMode.Fast).OnComplete(
+                            () =>
+                            {
+                                Barrier.transform.DORotate(new Vector3(0, 0, 0), 1.5f, RotateMode.Fast);
+                            });
                         cars.transform.parent = null;
                         cars.transform.parent = _ParkControl.transform;
+                        cars.GetComponent<CarController>().Move();
                     }                   
                 }
             }

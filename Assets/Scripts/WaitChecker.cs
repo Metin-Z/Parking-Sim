@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 public class WaitChecker : MonoBehaviour
 {
     public bool IUsed;
     public static int waitCount = 0;
     public int childControl;
+    CarSpawnList _carSpawn;
+    private void Start()
+    {
+        _carSpawn = FindObjectOfType<CarSpawnList>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Car"))
@@ -29,5 +35,15 @@ public class WaitChecker : MonoBehaviour
         {
             waitCount = 0;
         }
+        //if (IUsed == true)
+        //{
+        //    _carSpawn.WaitPos.Remove(_carSpawn.WaitPos.FirstOrDefault());
+        //    _carSpawn.WaitFalsePos.Add(_carSpawn.WaitPos.FirstOrDefault());          
+        //}
+        //if (IUsed == false)
+        //{
+        //    _carSpawn.WaitFalsePos.Remove(_carSpawn.WaitFalsePos.FirstOrDefault());
+        //    _carSpawn.WaitPos.Add(_carSpawn.WaitFalsePos.FirstOrDefault());
+        //}
     }
 }
