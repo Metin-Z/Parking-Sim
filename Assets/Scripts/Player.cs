@@ -18,27 +18,23 @@ public class Player : MonoBehaviour
         {
             Ray Point = Camera.main.ScreenPointToRay(Input.mousePosition);
             int layer = 7;
-            if (Physics.Raycast(Point, out collision, 1<< layer))
-            {
-                Collider[] collisions = Physics.Raycast(collision.point,Vector3.forward,5f,layer);                  
-                foreach (var cars in collisions)
-                {
-                    Rigidbody rb = cars.GetComponent<Rigidbody>();
-                    if (rb!=null)
-                    {
-                        Barrier.transform.DORotate(new Vector3(0, 0, -60), 1.5f, RotateMode.Fast).OnComplete(
-                            () =>
-                            {
-                                Barrier.transform.DORotate(new Vector3(0, 0, 0), 1.5f, RotateMode.Fast);
-                            });
-                        cars.transform.parent = null;
-                        cars.transform.parent = _ParkControl.transform;
-                        cars.GetComponent<CarController>().Move();
-                    }                   
-                }
+            if (Physics.Raycast(Point, out collision,Mathf.Infinity, 1 << layer))
+            {                
+                Barrier.transform.DORotate(new Vector3(0, 0, -60), 1.5f, RotateMode.Fast).OnComplete(
+                () =>
+                   {
+                       Barrier.transform.DORotate(new Vector3(0, 0, 0), 1.5f, RotateMode.Fast);
+                   });
+                Debug.LogError(collision.transform);
+                collision.transform.parent = null;
+                collision.transform.parent = _ParkControl.transform;
+                collision.transform.GetComponent<CarController>().Move();
             }
             Debug.DrawRay(Point.origin, Point.direction * 10f, Color.cyan);
         }
     }
+            
+        
+    
     // DOMove(new Vector3(0.28f, 0.05f, 1), 9.069f);
 }
