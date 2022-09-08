@@ -10,9 +10,9 @@ public class CarSpawnList : MonoBehaviour
     public List<Transform> CarsSpawnPos;
     public List<Transform> ParkPos;
     public List<Transform> WaitPos;
-    public List<Transform> WaitFalsePos;
     int carCount = 6;
-    public bool control =false;
+    int parentNumber = 0;
+    public bool control = false;
     public void Start()
     {
         StartCoroutine(CarSpawn());
@@ -20,46 +20,41 @@ public class CarSpawnList : MonoBehaviour
     }
     private void Update()
     {
-        if (WaitPos.Count != 0 && control == true)
-        {
-            if (WaitPos[0].GetComponent<WaitChecker>().IUsed == true)
-            {
-                WaitFalsePos.Add(WaitPos.FirstOrDefault());
-                WaitPos.Remove(WaitPos.FirstOrDefault());
-            }
-        }
-        if (WaitPos.Count >= 0 && control == true)
-        {
-            if (WaitFalsePos[0].GetComponent<WaitChecker>().IUsed == false)
-            {
-                WaitPos.Add(WaitFalsePos.FirstOrDefault());
-                WaitFalsePos.Remove(WaitFalsePos.FirstOrDefault());
-            }
-        }
-        if (WaitedCars.Count == 0)
-        {
-            control = false;
-        }
+        //if (WaitPos[0].GetComponent<WaitChecker>().IUsed == true)
+        //{
+        //    WaitPos.Add(WaitPos.LastOrDefault());
+        //    WaitPos.Remove(WaitPos.FirstOrDefault());
+        //}      
     }
     public IEnumerator StartControl()
     {
-        yield return new WaitForSeconds(2.35f);
+        yield return new WaitForSeconds(2.2f);
         control = true;
     }
     public IEnumerator CarSpawn()
     {
         while (carCount > 0)
         {
-            carCount--;
+            carCount--;       
             GameObject obj = Instantiate(CarsList[Random.Range(0, 4)], CarsSpawnPos[Random.Range(0, 2)]);
             obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
             obj.transform.DOScale(scale, 0.45f).SetEase(Ease.InBounce);
-            obj.transform.parent = WaitPos[0];
+            if (WaitPos[parentNumber].GetComponent<WaitChecker>().IUsed == false)
+            {
+                obj.transform.parent = WaitPos[parentNumber];
+            }
+            else if (WaitPos[parentNumber+1].GetComponent<WaitChecker>().IUsed == false)
+            {
+                obj.transform.parent = WaitPos[parentNumber + 1];
+            }
+            parentNumber += 1;
             WaitedCars.Add(obj);
-            //obj.transform.DOMove(new Vector3(0,0,0),2.75f);
-            //obj.transform.localPosition = new Vector3(0, 0, 0);
-            yield return new WaitForSeconds(2.4f);
+            if (parentNumber % 6 == 0)
+            {
+                parentNumber = 0;
+            }
+            yield return new WaitForSeconds(2.3f);
         }
     }
 }

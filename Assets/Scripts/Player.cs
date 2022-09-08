@@ -25,16 +25,11 @@ public class Player : MonoBehaviour
                    {
                        Barrier.transform.DORotate(new Vector3(0, 0, 0), 1.5f, RotateMode.Fast);
                    });
-                Debug.LogError(collision.transform);
                 collision.transform.parent = null;
                 collision.transform.parent = _ParkControl.transform;
-                collision.transform.GetComponent<CarController>().Move();
+                collision.transform.GetComponent<CarController>().Move();             
             }
             Debug.DrawRay(Point.origin, Point.direction * 10f, Color.cyan);
         }
     }
-            
-        
-    
-    // DOMove(new Vector3(0.28f, 0.05f, 1), 9.069f);
 }

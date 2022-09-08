@@ -17,15 +17,19 @@ public class ParkControl : MonoBehaviour
             _carSpawn.WaitedCars.Remove(_carSpawn.WaitedCars.FirstOrDefault());
             StartCoroutine(TrafficController());
             other.transform.parent = null;
-            other.transform.parent = _carSpawn.ParkPos[0];           
+            other.transform.parent = _carSpawn.ParkPos[0];
             _carSpawn.ParkPos.Remove(_carSpawn.ParkPos.FirstOrDefault());
             other.GetComponent<CarController>().Move();
+            other.transform.GetComponent<BoxCollider>().enabled = false;
         }
     }
     public IEnumerator TrafficController()
-    {      
-        yield return new WaitForSeconds(2.35f);
-        _carSpawn.WaitedCars[0].transform.parent = _carSpawn.WaitPos[0];
-        _carSpawn.WaitedCars[0].GetComponent<CarController>().Move();
+    {
+        yield return new WaitForSeconds(2f);
+        if (_carSpawn.WaitedCars.Count != 0)
+        {
+            _carSpawn.WaitedCars[0].transform.parent = _carSpawn.WaitPos[0];
+            _carSpawn.WaitedCars[0].GetComponent<CarController>().Move();
+        }
     }
 }

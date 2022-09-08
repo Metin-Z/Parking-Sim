@@ -35,15 +35,5 @@ public class WaitChecker : MonoBehaviour
         {
             waitCount = 0;
         }
-        //if (IUsed == true)
-        //{
-        //    _carSpawn.WaitPos.Remove(_carSpawn.WaitPos.FirstOrDefault());
-        //    _carSpawn.WaitFalsePos.Add(_carSpawn.WaitPos.FirstOrDefault());          
-        //}
-        //if (IUsed == false)
-        //{
-        //    _carSpawn.WaitFalsePos.Remove(_carSpawn.WaitFalsePos.FirstOrDefault());
-        //    _carSpawn.WaitPos.Add(_carSpawn.WaitFalsePos.FirstOrDefault());
-        //}
     }
 }

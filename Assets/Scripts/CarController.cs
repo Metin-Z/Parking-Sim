@@ -8,7 +8,7 @@ public class CarController : MonoBehaviour
     public bool CarMove = true;
     void Start()
     {
-        _carSpawn = FindObjectOfType<CarSpawnList>();
+        _carSpawn = FindObjectOfType<CarSpawnList>();     
         Move();
     }
     public void Move()
