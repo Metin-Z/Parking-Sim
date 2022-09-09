@@ -13,14 +13,13 @@ public class ParkControl : MonoBehaviour
     {
         if (other.gameObject.tag == "Car")
         {
-            Destroy(other.gameObject.GetComponent<Rigidbody>());
             _carSpawn.WaitedCars.Remove(_carSpawn.WaitedCars.FirstOrDefault());
             StartCoroutine(TrafficController());
             other.transform.parent = null;
             other.transform.parent = _carSpawn.ParkPos[0];
             _carSpawn.ParkPos.Remove(_carSpawn.ParkPos.FirstOrDefault());
-            other.GetComponent<CarController>().Move();
-            other.transform.GetComponent<BoxCollider>().enabled = false;
+            other.GetComponent<CarController>().Move();          
+            transform.GetComponent<BoxCollider>().enabled = false;
         }
     }
     public IEnumerator TrafficController()

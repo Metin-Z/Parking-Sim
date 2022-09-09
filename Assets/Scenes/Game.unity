@@ -623,7 +623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268686844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -972,6 +972,9 @@ GameObject:
   - component: {fileID: 414442635}
   - component: {fileID: 414442634}
   - component: {fileID: 414442633}
+  - component: {fileID: 414442636}
+  - component: {fileID: 414442637}
+  - component: {fileID: 414442638}
   m_Layer: 0
   m_Name: ParkArea6
   m_TagString: Park
@@ -1097,6 +1100,43 @@ MonoBehaviour:
     radialOrigin: {x: 0, y: 0, z: 0}
     radialRadius: 0
   useFill: 0
+--- !u!65 &414442636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414442631}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3975511, y: 0.39313382, z: 0.4587554}
+  m_Center: {x: 0.0206341, y: 0, z: -0.27758217}
+--- !u!114 &414442637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414442631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c1da1597620bb4895c2a4cb1eeafa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &414442638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414442631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c1da1597620bb4895c2a4cb1eeafa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &441446745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1199,7 @@ Transform:
   m_Children:
   - {fileID: 4303257646015164865}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &465752695
 GameObject:
@@ -1571,6 +1611,8 @@ GameObject:
   - component: {fileID: 635934870}
   - component: {fileID: 635934869}
   - component: {fileID: 635934868}
+  - component: {fileID: 635934871}
+  - component: {fileID: 635934872}
   m_Layer: 0
   m_Name: ParkArea4
   m_TagString: Park
@@ -1696,6 +1738,31 @@ MonoBehaviour:
     radialOrigin: {x: 0, y: 0, z: 0}
     radialRadius: 0
   useFill: 0
+--- !u!65 &635934871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635934866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3975511, y: 0.39313382, z: 0.4587554}
+  m_Center: {x: 0.0206341, y: 0, z: -0.27758217}
+--- !u!114 &635934872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635934866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c1da1597620bb4895c2a4cb1eeafa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,6 +2032,8 @@ GameObject:
   - component: {fileID: 734336491}
   - component: {fileID: 734336490}
   - component: {fileID: 734336489}
+  - component: {fileID: 734336492}
+  - component: {fileID: 734336493}
   m_Layer: 0
   m_Name: ParkArea3
   m_TagString: Park
@@ -2090,6 +2159,31 @@ MonoBehaviour:
     radialOrigin: {x: 0, y: 0, z: 0}
     radialRadius: 0
   useFill: 0
+--- !u!65 &734336492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734336487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3975511, y: 0.39313382, z: 0.4587554}
+  m_Center: {x: 0.0206341, y: 0, z: -0.27758217}
+--- !u!114 &734336493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734336487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c1da1597620bb4895c2a4cb1eeafa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &743624696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,6 +2362,8 @@ GameObject:
   - component: {fileID: 743791560}
   - component: {fileID: 743791559}
   - component: {fileID: 743791558}
+  - component: {fileID: 743791561}
+  - component: {fileID: 743791562}
   m_Layer: 0
   m_Name: ParkArea2
   m_TagString: Park
@@ -2393,6 +2489,31 @@ MonoBehaviour:
     radialOrigin: {x: 0, y: 0, z: 0}
     radialRadius: 0
   useFill: 0
+--- !u!65 &743791561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743791556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3975511, y: 0.39313382, z: 0.4587554}
+  m_Center: {x: 0.0206341, y: 0, z: -0.27758217}
+--- !u!114 &743791562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743791556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c1da1597620bb4895c2a4cb1eeafa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &760096419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,6 +2624,8 @@ GameObject:
   - component: {fileID: 762259085}
   - component: {fileID: 762259084}
   - component: {fileID: 762259083}
+  - component: {fileID: 762259086}
+  - component: {fileID: 762259087}
   m_Layer: 0
   m_Name: ParkArea5
   m_TagString: Park
@@ -2628,6 +2751,31 @@ MonoBehaviour:
     radialOrigin: {x: 0, y: 0, z: 0}
     radialRadius: 0
   useFill: 0
+--- !u!65 &762259086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762259081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3975511, y: 0.39313382, z: 0.4587554}
+  m_Center: {x: 0.0206341, y: 0, z: -0.27758217}
+--- !u!114 &762259087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762259081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c1da1597620bb4895c2a4cb1eeafa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827159865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3922,7 +4070,7 @@ BoxCollider:
   m_GameObject: {fileID: 1422104850}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.10438493, y: 0.9999995, z: 0.05473839}
   m_Center: {x: -0.009619719, y: 0, z: -0.21554774}
@@ -3942,12 +4090,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422104850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.318, y: 0.1553, z: 9.407}
+  m_LocalPosition: {x: 0.2640001, y: 0.1553, z: 9.259}
   m_LocalScale: {x: 2.8944337, y: 0.23263562, z: 0.79649997}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454995929
 GameObject:
@@ -5624,6 +5772,8 @@ GameObject:
   - component: {fileID: 2027580333}
   - component: {fileID: 2027580332}
   - component: {fileID: 2027580331}
+  - component: {fileID: 2027580334}
+  - component: {fileID: 2027580335}
   m_Layer: 0
   m_Name: ParkArea1
   m_TagString: Park
@@ -5749,6 +5899,31 @@ MonoBehaviour:
     radialOrigin: {x: 0, y: 0, z: 0}
     radialRadius: 0
   useFill: 0
+--- !u!65 &2027580334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027580329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3975511, y: 0.39313382, z: 0.4587554}
+  m_Center: {x: 0.0206341, y: 0, z: -0.27758217}
+--- !u!114 &2027580335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027580329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c1da1597620bb4895c2a4cb1eeafa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2057798268
 GameObject:
   m_ObjectHideFlags: 0
@@ -7410,7 +7585,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4301058258850942741
 GameObject:

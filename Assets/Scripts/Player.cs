@@ -27,9 +27,15 @@ public class Player : MonoBehaviour
                    });
                 collision.transform.parent = null;
                 collision.transform.parent = _ParkControl.transform;
-                collision.transform.GetComponent<CarController>().Move();             
+                collision.transform.GetComponent<CarController>().Move();
+                StartCoroutine(ParkCollider());
             }
             Debug.DrawRay(Point.origin, Point.direction * 10f, Color.cyan);
         }
+    }
+    public IEnumerator ParkCollider()
+    {
+        yield return new WaitForSeconds(2.36f);
+        _ParkControl.GetComponent<BoxCollider>().enabled = true;
     }
 }
