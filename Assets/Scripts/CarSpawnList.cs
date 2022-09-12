@@ -18,17 +18,9 @@ public class CarSpawnList : MonoBehaviour
         StartCoroutine(CarSpawn());
         StartCoroutine(StartControl());
     }
-    private void Update()
-    {
-        //if (WaitPos[0].GetComponent<WaitChecker>().IUsed == true)
-        //{
-        //    WaitPos.Add(WaitPos.LastOrDefault());
-        //    WaitPos.Remove(WaitPos.FirstOrDefault());
-        //}      
-    }
     public IEnumerator StartControl()
     {
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(0.3f);
         control = true;
     }
     public IEnumerator CarSpawn()
@@ -54,7 +46,7 @@ public class CarSpawnList : MonoBehaviour
             {
                 parentNumber = 0;
             }
-            yield return new WaitForSeconds(2.3f);
+            yield return new WaitForSeconds(2f);
         }
     }
 }

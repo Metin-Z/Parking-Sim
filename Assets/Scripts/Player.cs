@@ -5,7 +5,6 @@ using DG.Tweening;
 public class Player : MonoBehaviour
 {
     RaycastHit collision;
-    Vector3 Cursor;
     ParkControl _ParkControl;
     public GameObject Barrier;
     private void Start()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using DG.Tweening;
 public class WaitChecker : MonoBehaviour
 {
     public bool IUsed;
@@ -16,6 +17,8 @@ public class WaitChecker : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Car"))
         {
+            other.transform.localScale = new Vector3(0.6f,0.6f,0.6f);
+            other.transform.DORotate(new Vector3(0, 0, 0), 1.5f, RotateMode.Fast);
             IUsed = true;
             waitCount+=1;
         }       
