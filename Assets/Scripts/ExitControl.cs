@@ -19,17 +19,14 @@ public class ExitControl : MonoBehaviour
             GameObject obj = other.gameObject;
             other.transform.parent = null;
             other.transform.parent = _carSpawn.EndPos[0];
+            other.GetComponent<CarController>().Move();
         }
         if (other.gameObject.tag == "Car" && Right == true)
         {
             other.transform.parent = null;
-            other.transform.parent = _carSpawn.EndPos[1].transform;         
+            other.transform.parent = _carSpawn.EndPos[1].transform;
+            other.GetComponent<CarController>().Move();
         }
-    }
-    public IEnumerator ColliderStart()
-    {
-        yield return new WaitForSeconds(1.7f);
-        transform.GetComponent<BoxCollider>().enabled = true;
     }
    
 }
