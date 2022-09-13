@@ -10,6 +10,8 @@ public class CarSpawnList : MonoBehaviour
     public List<Transform> CarsSpawnPos;
     public List<Transform> ParkPos;
     public List<Transform> WaitPos;
+    public List<Transform> ExitPos;
+    public List<Transform> EndPos;
     int carCount = 6;
     int parentNumber = 0;
     public bool control = false;
@@ -46,7 +48,7 @@ public class CarSpawnList : MonoBehaviour
             {
                 parentNumber = 0;
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.85f);
         }
     }
 }

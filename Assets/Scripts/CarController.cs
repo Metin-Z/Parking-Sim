@@ -13,7 +13,7 @@ public class CarController : MonoBehaviour
     }
     public void Move()
     {
-        transform.DOLocalMove(new Vector3(0, 0, 0), 2.1f);
+        transform.DOLocalMove(new Vector3(0, 0, 0), 1.5f);
         transform.LookAt(transform.parent,new Vector3(0,0,0));
         
     }
