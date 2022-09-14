@@ -6,11 +6,12 @@ using DG.Tweening;
 public class ParkTween : MonoBehaviour
 {
     public GameObject Car;
-    LevelBar _levelbar;
+    CarSpawnList _carSpawn;
     private void Start()
     {
-        _levelbar = FindObjectOfType<LevelBar>();
+        _carSpawn = FindObjectOfType<CarSpawnList>();   
     }
+
     private void OnTriggerEnter(Collider other)
     {
         other.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
@@ -19,11 +20,14 @@ public class ParkTween : MonoBehaviour
         Debug.Log("Araba Geldi");
         Car.layer = 8;
         StartCoroutine(Rotate());
-        _levelbar.Fill();
     }
     public IEnumerator Rotate()
     {
         yield return new WaitForSeconds(1.5f);
         Car.transform.DORotate(new Vector3(0, 180, 0), 0.5f, RotateMode.FastBeyond360);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        _carSpawn.ParkPos.Add(gameObject.transform);
     }
 }

@@ -20,6 +20,15 @@ public class CarSpawnList : MonoBehaviour
         StartCoroutine(CarSpawn());
         StartCoroutine(StartControl());
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Debug.Log("N ye basýldý");
+            NewCar();
+        }
+
+    }
     public IEnumerator StartControl()
     {
         yield return new WaitForSeconds(0.3f);
@@ -29,7 +38,7 @@ public class CarSpawnList : MonoBehaviour
     {
         while (carCount > 0)
         {
-            carCount--;       
+            carCount--;
             GameObject obj = Instantiate(CarsList[Random.Range(0, 4)], CarsSpawnPos[Random.Range(0, 2)]);
             obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
@@ -38,7 +47,7 @@ public class CarSpawnList : MonoBehaviour
             {
                 obj.transform.parent = WaitPos[parentNumber];
             }
-            else if (WaitPos[parentNumber+1].GetComponent<WaitChecker>().IUsed == false)
+            else if (WaitPos[parentNumber + 1].GetComponent<WaitChecker>().IUsed == false)
             {
                 obj.transform.parent = WaitPos[parentNumber + 1];
             }
@@ -51,4 +60,15 @@ public class CarSpawnList : MonoBehaviour
             yield return new WaitForSeconds(0.85f);
         }
     }
+    public void NewCar()
+    {
+        Debug.Log("Araba Oluþtur");
+        GameObject obj = Instantiate(CarsList[Random.Range(0, 4)], CarsSpawnPos[Random.Range(0, 2)]);
+        obj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+        Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
+        obj.transform.DOScale(scale, 0.45f).SetEase(Ease.InBounce);
+        obj.transform.parent = WaitPos[WaitedCars.Count];
+        WaitedCars.Add(obj);
+    }
+
 }

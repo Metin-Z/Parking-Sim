@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class LevelBar : MonoBehaviour
 {
     public float progress;
-    Image progressBar;
-    float maxAmount;
+    public Image progressBar;
+    public float maxAmount;
     void Start()
     {
         progressBar =GetComponent<Image>();

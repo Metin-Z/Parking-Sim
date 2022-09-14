@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     public GameObject BarrierRight;
     public GameObject LeftHouse;
     public GameObject RightHouse;
+    public Color leftTransp;
+    public Color rightTransp;
+    public Color leftRoof;
+    public Color rightRoof;
     int randomSide;
     private void Start()
     {
@@ -49,18 +53,29 @@ public class Player : MonoBehaviour
                 collision.transform.GetComponent<CarController>().Move();
                 if (randomSide == 0)
                 {
-                    BarrierLeft.transform.DORotate(new Vector3(60, 0, 0), 1.5f, RotateMode.Fast).OnComplete(
+                    LeftHouse.GetComponent<MeshRenderer>().materials.LastOrDefault().DOColor(leftTransp,1);
+                    BarrierLeft.transform.DORotate(new Vector3(60, 0, 0), 1.75f, RotateMode.Fast).OnComplete(
                 () =>
                 {
-                    BarrierLeft.transform.DORotate(new Vector3(0, 0, 0), 2f, RotateMode.Fast);
+                    BarrierLeft.transform.DORotate(new Vector3(0, 0, 0), 2f, RotateMode.Fast).OnComplete(
+                () =>
+                {
+                    LeftHouse.GetComponent<MeshRenderer>().materials.LastOrDefault().DOColor(leftRoof,1);
+                });
                 });
                 }
                 if (randomSide == 1)
                 {
-                    BarrierRight.transform.DORotate(new Vector3(60, 0,0), 1.5f, RotateMode.Fast).OnComplete(
+                    RightHouse.GetComponent<MeshRenderer>().materials.LastOrDefault().DOColor(rightTransp,1);
+                    BarrierRight.transform.DORotate(new Vector3(60, 0,0), 1.75f, RotateMode.Fast).OnComplete(
                 () =>
                 {
-                    BarrierRight.transform.DORotate(new Vector3(0, 0, 0), 2f, RotateMode.Fast);
+                    BarrierRight.transform.DORotate(new Vector3(0, 0, 0), 2f, RotateMode.Fast)
+                    .OnComplete(
+                () =>
+                {
+                    RightHouse.GetComponent<MeshRenderer>().materials.LastOrDefault().DOColor(rightRoof,1);
+                });
                 });
                 }
                 StartCoroutine(ExitCollider());

@@ -6,16 +6,18 @@ using TMPro;
 public class LevelManager : MonoBehaviour
 {
     CarSpawnList _carspawn;
+    LevelBar _levelbar;
     public GameObject NextLevelButton;
     public TextMeshProUGUI LevelText;
     public TextMeshProUGUI NextLevelText;
     void Start()
     {
         _carspawn = FindObjectOfType<CarSpawnList>();
+        _levelbar = FindObjectOfType<LevelBar>();
     }
     void Update()
     {
-        if (_carspawn.ParkPos.Count ==0)
+        if (_levelbar.progress ==6)
         {
             NextLevelButton.SetActive(true);
         }
