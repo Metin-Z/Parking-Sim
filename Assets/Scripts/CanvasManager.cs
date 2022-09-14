@@ -18,8 +18,8 @@ public class CanvasManager : MonoBehaviour
         ScoreText.text = ScoreInt.ToString();
         if (ScoreInt>=highScore)
         {
-            PlayerPrefs.SetInt("High", highScore);
             highScore = ScoreInt;
+            PlayerPrefs.SetInt("High", highScore);     
         }
         
     }
