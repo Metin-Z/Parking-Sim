@@ -29,5 +29,6 @@ public class ParkTween : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         _carSpawn.ParkPos.Add(gameObject.transform);
+        Car = null;
     }
 }

@@ -1511,7 +1511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366317701}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.5179999, y: 0, z: -5.913}
+  m_LocalPosition: {x: -1.5179999, y: 0, z: -6.914}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1531,7 +1531,6 @@ GameObject:
   - component: {fileID: 414442634}
   - component: {fileID: 414442633}
   - component: {fileID: 414442636}
-  - component: {fileID: 414442637}
   - component: {fileID: 414442638}
   m_Layer: 0
   m_Name: ParkArea6
@@ -1671,19 +1670,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: -0.02, y: 0.39313382, z: 0.4587554}
   m_Center: {x: 0.0206341, y: 0.3, z: -0.27758217}
---- !u!114 &414442637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414442631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c1da1597620bb4895c2a4cb1eeafa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Car: {fileID: 0}
 --- !u!114 &414442638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3674,7 +3660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762259081}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.49999994, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5000001, z: 0.5000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9421,7 +9407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878234865}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.9899999, y: 0, z: -5.913}
+  m_LocalPosition: {x: -0.9899999, y: 0, z: -6.914}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
