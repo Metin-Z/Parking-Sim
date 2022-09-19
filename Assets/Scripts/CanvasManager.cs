@@ -10,11 +10,12 @@ public class CanvasManager : MonoBehaviour
 
     private void Start()
     {
-        highScoreText.text = PlayerPrefs.GetInt("High").ToString();
+        highScore = PlayerPrefs.GetInt("High");      
     }
 
     private void Update()
     {
+        highScoreText.text = PlayerPrefs.GetInt("High").ToString();
         ScoreText.text = ScoreInt.ToString();
         if (ScoreInt>=highScore)
         {
