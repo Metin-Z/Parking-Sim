@@ -5,6 +5,7 @@ public class CanvasManager : MonoBehaviour
 {
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI highScoreText;
+    public GameObject RestartPanel;
     public int ScoreInt;
     public int highScore;
 
@@ -21,7 +22,10 @@ public class CanvasManager : MonoBehaviour
         {
             highScore = ScoreInt;
             PlayerPrefs.SetInt("High", highScore);     
-        }
-        
+        }    
+    }
+    public void Fail()
+    {
+        RestartPanel.SetActive(true);
     }
 }

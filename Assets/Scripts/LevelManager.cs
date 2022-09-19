@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     CarSpawnList _carspawn;
     LevelBar _levelbar;
-    public GameObject NextLevelButton;
+    public GameObject NextLevelButton;   
     public TextMeshProUGUI LevelText;
     public TextMeshProUGUI NextLevelText;
     void Start()
@@ -27,6 +27,10 @@ public class LevelManager : MonoBehaviour
     public void Next()
     {
         PlayerPrefs.SetInt(CommonTypes.LEVEL_FAKE_DATA_KEY, PlayerPrefs.GetInt(CommonTypes.LEVEL_FAKE_DATA_KEY) + 1);
+        SceneManager.LoadScene(0);
+    }
+    public void Restart()
+    {      
         SceneManager.LoadScene(0);
     }
 }

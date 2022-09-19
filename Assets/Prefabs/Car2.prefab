@@ -217,7 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d183143b07fdf444780f416a37695037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exp: {fileID: 5371239327699100800, guid: 8d4c0ac6c6f5e7b49ba361fd12bddc29, type: 3}
   CarMove: 1
+  randomTime: 0
 --- !u!54 &-3339302038837005655
 Rigidbody:
   m_ObjectHideFlags: 0
